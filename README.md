@@ -10,7 +10,7 @@ This is a React application that displays a list of your recent bank transaction
 
 [Click Here](https://bank-of-flatiron-by-migero.netlify.app/) to view the live link
 
-![Demo-Image](./src/Components/image.png)
+![Demo-Image](./public/image.png)
 
 ## How to Run
 
