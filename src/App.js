@@ -6,12 +6,12 @@ import TableTransaction from './Components/TableTransaction';
 
 function App() {
   const initialTransactionRecords = [
-    { date: "2024-04-01", description: "Grocery shopping", category: "Food", amount: 150.00 },
-    { date: "2024-04-03", description: "Monthly subscription", category: "Entertainment", amount: 12.99 },
-    { date: "2024-04-04", description: "Gym membership", category: "Health", amount: 40.00 },
-    { date: "2024-04-05", description: "Coffee with friends", category: "Social", amount: 8.50 },
-    { date: "2024-04-06", description: "Internet bill", category: "Utilities", amount: 60.00 },
-    { date: "2024-04-10", description: "Textbooks", category: "Education", amount: 120.00 }
+    { date: "2024-05-15", description: "Movie night", category: "Entertainment", amount: 25.00 },
+    { date: "2024-05-18", description: "Dinner at restaurant", category: "Food", amount: 50.00 },
+    { date: "2024-05-20", description: "New sneakers", category: "Shopping", amount: 80.00 },
+    { date: "2024-05-22", description: "Phone bill", category: "Utilities", amount: 45.00 },
+    { date: "2024-05-25", description: "Fitness class", category: "Health", amount: 30.00 },
+    { date: "2024-05-28", description: "Book purchase", category: "Education", amount: 20.00 }
   ];
 
   const [transactionRecords, setTransactionRecords] = useState(initialTransactionRecords);
