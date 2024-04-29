@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 function AddTransaction({ onAdd }) {
+  // Initialize state for form data with empty fields
   const [formData, setFormData] = useState({
     date: '',
     description: '',
@@ -8,8 +9,12 @@ function AddTransaction({ onAdd }) {
     amount: ''
   });
 
+  // Handle change in form inputs
   const handleChange = (e) => {
     const { name, value } = e.target;
+    // Update form data state with new value then
+    // spread the existing form data and
+    // update the specific field
     setFormData({
       ...formData,
       [name]: value
@@ -46,12 +51,13 @@ function AddTransaction({ onAdd }) {
 
   return (
     <div className='Transaction'>
+      {/* Form for adding a new transaction */}
       <form onSubmit={handleSubmit}>
         <input
           type="date"
           name="date"
           value={formData.date}
-          onChange={handleChange}
+          onChange={handleChange} // Call handleChange function when input changes
         />
         <input
           type="text"
@@ -74,6 +80,7 @@ function AddTransaction({ onAdd }) {
           value={formData.amount}
           onChange={handleChange}
         />
+        {/* Submit button to add transaction */}
         <button type="submit">Add Transaction</button>
       </form>
     </div>

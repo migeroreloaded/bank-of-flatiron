@@ -3,13 +3,16 @@ import TransactionRow from './TransactionRow';
 import SortButton from './SortButton';
 
 function TableTransaction({ records }) {
+  // State to hold sorted records
   const [sortedRecords, setSortedRecords] = useState([...records]);
 
+  // Function to sort records by category
   const sortRecordsByCategory = () => {
     const sorted = [...sortedRecords].sort((a, b) => a.category.localeCompare(b.category));
     setSortedRecords(sorted);
   };
-
+  
+  // Function to sort records by description
   const sortRecordsByDescription = () => {
     const sorted = [...sortedRecords].sort((a, b) => a.description.localeCompare(b.description));
     setSortedRecords(sorted);
@@ -34,6 +37,7 @@ function TableTransaction({ records }) {
           </tr>
         </thead>
         <tbody>
+          {/* Render each transaction row */}
           {sortedRecords.map((data, index) => (
             <TransactionRow
               key={index}

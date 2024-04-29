@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import SearchBox from './Components/SearchBox';
 import AddTransaction from './Components/AddTransaction';
 import TableTransaction from './Components/TableTransaction';
 
 function App() {
+  // Initial Transaction Records
   const initialTransactionRecords = [
     { date: "2024-05-15", description: "Movie night", category: "Entertainment", amount: 25.00 },
     { date: "2024-05-18", description: "Dinner at restaurant", category: "Food", amount: 50.00 },
@@ -14,6 +15,7 @@ function App() {
     { date: "2024-05-28", description: "Book purchase", category: "Education", amount: 20.00 }
   ];
 
+  // State to manage transaction records
   const [transactionRecords, setTransactionRecords] = useState(initialTransactionRecords);
   const [filteredTransactions, setFilteredTransactions] = useState(initialTransactionRecords);
 
@@ -33,28 +35,11 @@ function App() {
 
   // Function to add new transaction
   const handleAddTransaction = (newTransaction) => {
-    // Add the new transaction to the TransactionRecords array
+    // Add the new transaction to the transactionRecords array
     const updatedTransactions = [...transactionRecords, newTransaction];
     setTransactionRecords(updatedTransactions);
-
-    // Update filteredTransactions based on the current search term
-    const searchTerm = ''; // Set the default search term
-    if (!searchTerm) {
-      // If search term is empty, show all transactions
-      setFilteredTransactions(updatedTransactions);
-    } else {
-      // Filter transactions based on search term
-      const filtered = updatedTransactions.filter(transaction =>
-        transaction.description.toLowerCase().includes(searchTerm.toLowerCase())
-      );
-      setFilteredTransactions(filtered);
-    }
+    setFilteredTransactions(updatedTransactions); // Update filtered transactions directly
   };
-
-  // Reset filteredTransactions when transactionRecords change
-  useEffect(() => {
-    setFilteredTransactions(transactionRecords);
-  }, [transactionRecords]);
 
   return (
     <div className="App">
