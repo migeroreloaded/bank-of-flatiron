@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import SearchBox from './Components/Search';
+import SearchBox from './Components/SearchBox';
 import AddTransaction from './Components/AddTransaction';
 import TableTransaction from './Components/TableTransaction';
 
