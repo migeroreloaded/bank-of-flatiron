@@ -18,7 +18,21 @@ function AddTransaction({ onAdd }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Validate form data (optional)
+    // Validate form data
+
+    // Basic validation
+    if (!formData.date || !formData.description || !formData.category || !formData.amount) {
+      alert('Please fill in all fields');
+      return;
+    }
+
+    // Validate amount as integer
+    const amountInt = parseInt(formData.amount);
+    if (isNaN(amountInt) || amountInt !== parseFloat(formData.amount)) {
+      alert('Amount must be an integer');
+      return;
+    }
+
     // Add the new transaction using the onAdd callback
     onAdd(formData);
     // Clear the form fields
