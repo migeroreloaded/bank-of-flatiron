@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import TransactionRow from './TransactionRow';
+import SortButton from './SortButton';
 
 function TableTransaction({ records }) {
   const [sortedRecords, setSortedRecords] = useState([...records]);
@@ -21,8 +22,8 @@ function TableTransaction({ records }) {
 
   return (
     <div>
-      <button onClick={sortRecordsByCategory}>Sort by Category</button>
-      <button onClick={sortRecordsByDescription}>Sort by Description</button>
+      <SortButton onClick={sortRecordsByCategory} label="Sort by Category" />
+      <SortButton onClick={sortRecordsByDescription} label="Sort by Description" />
       <table>
         <thead>
           <tr>
